@@ -1,4 +1,5 @@
-﻿CREATE TABLE "employees" (
+﻿
+CREATE TABLE "employees" (
     "emp_no" INT   NOT NULL,
     "emp_title_id" VARCHAR   NOT NULL,
     "birth_date" DATE   NOT NULL,
@@ -12,7 +13,7 @@
 );
 
 CREATE TABLE "Departments" (
-    "dept_no" VARCHAR   NOT NULL,
+    "dept_no" INT   NOT NULL,
     "dept_name" VARCHAR   NOT NULL,
     CONSTRAINT "pk_Departments" PRIMARY KEY (
         "dept_no"
@@ -21,26 +22,17 @@ CREATE TABLE "Departments" (
 
 CREATE TABLE "dept_emp" (
     "emp_no" INT   NOT NULL,
-    "dept_no" VARCHAR   NOT NULL,
-    CONSTRAINT "pk_dept_emp" PRIMARY KEY (
-        "emp_no","dept_no"
-     )
+    "dept_no" VARCHAR   NOT NULL
 );
 
 CREATE TABLE "dept_manager" (
     "dept_no" VARCHAR   NOT NULL,
-    "emp_no" INT   NOT NULL,
-    CONSTRAINT "pk_dept_manager" PRIMARY KEY (
-        "emp_no"
-     )
+    "emp_no" INT   NOT NULL
 );
 
 CREATE TABLE "salaries" (
     "emp_no" INT   NOT NULL,
-    "salary" INT   NOT NULL,
-    CONSTRAINT "pk_salaries" PRIMARY KEY (
-        "emp_no"
-     )
+    "salary" INT   NOT NULL
 );
 
 CREATE TABLE "titles" (
